@@ -55,9 +55,18 @@ fi
 if [[ "${RUN_APT}" -eq 1 ]]; then
   echo "Installing Raspberry Pi system packages..."
   sudo apt update
-  sudo apt install -y git curl make build-essential libssl-dev zlib1g-dev \
+  sudo apt install -y git git-lfs curl make build-essential libssl-dev zlib1g-dev \
     libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses-dev xz-utils \
     tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev v4l-utils
+fi
+
+if command -v git >/dev/null 2>&1 && git lfs version >/dev/null 2>&1; then
+  echo "Fetching Git LFS assets..."
+  git lfs install --local
+  git lfs pull
+else
+  echo "git-lfs is not available. Install it and run 'git lfs pull' before starting the app." >&2
+  exit 2
 fi
 
 export PYENV_ROOT="${PYENV_ROOT:-$HOME/.pyenv}"

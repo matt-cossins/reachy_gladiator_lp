@@ -48,13 +48,21 @@ On the Raspberry Pi:
 
 ```bash
 cd ~/reachy_projects
+sudo apt update
+sudo apt install git-lfs
+git lfs install
 git clone https://github.com/matt-cossins/reachy_gladiator_lp.git
 cd reachy_gladiator_lp
+git lfs pull
 ./scripts/setup_pi.sh
 source .venv/bin/activate
 ./scripts/check_pi_camera.sh
 REACHY_GLADIATOR_DAEMON_PORT=18000 ./scripts/run_pi_app.sh <simulation-host-ip>
 ```
+
+The MediaPipe model at `reachy_gladiator_lp/assets/gesture_recognizer.task`
+is stored with Git LFS. After cloning, it should be about 8 MB; if it is only
+132 bytes, run `git lfs pull` again before starting the app.
 
 Open the dashboard:
 
