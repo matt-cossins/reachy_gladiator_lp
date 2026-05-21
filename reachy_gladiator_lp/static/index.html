@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reachy Gladiator</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="arena">
+      <header class="banner">
+        <img class="crest" src="/static/media/reachy_gladiator.png" alt="" />
+        <div>
+          <p class="kicker">Reachy Mini App</p>
+          <h1>Reachy Gladiator</h1>
+          <p class="tagline">Perform. Await judgement. Return to the arena.</p>
+        </div>
+      </header>
+
+      <section class="dashboard">
+        <aside class="side-panel">
+          <section class="status-grid">
+            <article class="tile">
+              <span>Round</span>
+              <strong id="round">0</strong>
+            </article>
+            <article class="tile">
+              <span>State</span>
+              <strong id="state">starting</strong>
+            </article>
+            <article class="tile">
+              <span>Gesture</span>
+              <strong id="gesture">none</strong>
+            </article>
+          </section>
+
+          <section class="sequence">
+            <h2>Move</h2>
+            <ol id="sequence"></ol>
+          </section>
+
+          <section class="moves-panel">
+            <h2>Repertoire</h2>
+            <div id="moves-list"></div>
+          </section>
+        </aside>
+
+        <section class="camera-panel">
+          <div class="camera-head">
+            <h2>Camera</h2>
+            <span id="camera-status">waiting</span>
+          </div>
+          <div class="camera-frame">
+            <img id="camera-feed" src="/video" alt="Live camera feed" />
+            <div id="camera-badge">none</div>
+          </div>
+        </section>
+
+        <aside class="side-panel">
+          <figure class="gladiator-art">
+            <img src="/static/media/reachy_gladiator.png" alt="Reachy Gladiator" />
+          </figure>
+
+          <section class="verdicts" aria-label="Verdicts">
+            <article id="thumbs_up" class="verdict up">
+              <div class="icon">👍</div>
+              <h2>Thumbs Up</h2>
+              <p>Victory routine</p>
+            </article>
+            <article id="neutral" class="verdict neutral">
+              <div class="icon">✋</div>
+              <h2>No Thumb</h2>
+              <p>Waiting stance</p>
+            </article>
+            <article id="thumbs_down" class="verdict down">
+              <div class="icon">👎</div>
+              <h2>Thumbs Down</h2>
+              <p>Defeat routine</p>
+            </article>
+          </section>
+        </aside>
+      </section>
+    </main>
+    <script src="/static/main.js"></script>
+  </body>
+</html>

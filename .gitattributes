@@ -1,0 +1,2 @@
+reachy_gladiator_lp/assets/gesture_recognizer.task filter=lfs diff=lfs merge=lfs -text
+reachy_gladiator_lp/static/media/* filter=lfs diff=lfs merge=lfs -text

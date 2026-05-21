@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reachy Gladiator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker">Reachy Mini App</p>
+          <h1>Reachy Gladiator</h1>
+          <p>
+            A Reachy Mini arena game where Reachy performs a gladiator
+            moves. You will decide Reachy’s fate in the classic Roman way - a 👍 for Victory, or a 👎 for Defeat.
+          </p>
+          <div class="hero-actions">
+            <a href="#moves">Moves & Verdicts</a>
+            <a href="#dashboard">Web Dashboard</a>
+            <a href="#run">Run App</a>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <img
+            src="reachy_gladiator_lp/static/media/reachy_gladiator_logo.png"
+            alt="Reachy Gladiator"
+          />
+        </div>
+      </section>
+
+      <section class="highlights" aria-label="Highlights">
+        <article>
+          <strong>Custom Arena Moves</strong>
+        </article>
+        <article>
+          <strong>Victory & Defeat Reactions</strong>
+        </article>
+      </section>
+
+      <section id="moves" class="section-head">
+        <p class="kicker">Move Repertoire</p>
+        <h2>Animated arena routines</h2>
+      </section>
+
+      <section class="move-grid" aria-label="Move previews">
+        <article>
+          <img src="reachy_gladiator_lp/static/media/salute.gif" alt="Reachy saluting" />
+          <div>
+            <strong>Salute</strong>
+            <span>Scans the crowd, lifts high, and holds a proud pose.</span>
+          </div>
+        </article>
+        <article>
+          <img src="reachy_gladiator_lp/static/media/sword.gif" alt="Reachy sword swing move" />
+          <div>
+            <strong>Sword Swing</strong>
+            <span>Wide swing and slash across, and snaps back to ready.</span>
+          </div>
+        </article>
+        <article>
+          <img src="reachy_gladiator_lp/static/media/shield.gif" alt="Reachy shield move" />
+          <div>
+            <strong>Shield Up</strong>
+            <span>Drops behind a crossed antenna guard and absorbs a hit.</span>
+          </div>
+        </article>
+        <article>
+          <img src="reachy_gladiator_lp/static/media/battle-cry.gif" alt="Reachy battle cry" />
+          <div>
+            <strong>Battle Cry</strong>
+            <span>Throws its head up and rattles both antennas in a roar.</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="verdicts" class="verdicts" aria-label="Verdicts">
+        <article class="up">
+          <img src="reachy_gladiator_lp/static/media/thumbs-up.gif" alt="Thumbs up victory" />
+          <div>
+            <p class="kicker">Thumbs Up</p>
+            <h2>Victory</h2>
+            <p>Excited antennas, a controlled spin, and back to ready.</p>
+          </div>
+        </article>
+        <article class="down">
+          <img src="reachy_gladiator_lp/static/media/thumbs-down.gif" alt="Thumbs down defeat" />
+          <div>
+            <p class="kicker">Thumbs Down</p>
+            <h2>Defeat</h2>
+            <p>The dramatic bow the crowd demanded.</p>
+          </div>
+        </article>
+      </section>
+
+      <section id="dashboard" class="section-head">
+        <p class="kicker">Web Dashboard</p>
+        <h2>Arena Dashboard View</h2>
+      </section>
+
+      <section class="dashboard-showcase" aria-label="Dashboard preview">
+        <div class="browser-bar">
+          <span></span>
+          <span></span>
+          <span></span>
+          <strong>Reachy Gladiator Dashboard</strong>
+        </div>
+        <div class="dashboard-preview">
+          <aside class="preview-rail">
+            <div class="preview-tile">
+              <span>Round</span>
+              <strong>7</strong>
+            </div>
+            <div class="preview-tile">
+              <span>State</span>
+              <strong>Awaiting verdict</strong>
+            </div>
+            <div class="preview-tile">
+              <span>Gesture</span>
+              <strong>Thumbs up 91%</strong>
+            </div>
+            <div class="preview-list">
+              <span>Move</span>
+              <strong>Sword Swing</strong>
+              <small>repeat 3 / 3</small>
+            </div>
+          </aside>
+
+          <div class="preview-camera">
+            <div class="preview-camera-head">
+              <strong>Camera</strong>
+              <span>live</span>
+            </div>
+            <div class="preview-camera-field">
+              <div class="camera-target">
+                <span>Live Camera Feed</span>
+                <strong>Gesture frame stream</strong>
+              </div>
+            </div>
+          </div>
+
+          <aside class="preview-verdicts">
+            <article class="active">
+              <div class="preview-icon">👍</div>
+              <strong>Thumbs Up</strong>
+              <span>Victory routine</span>
+            </article>
+            <article>
+              <div class="preview-icon">👎</div>
+              <strong>Thumbs Down</strong>
+              <span>Defeat routine</span>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="details">
+        <article>
+          <p class="kicker">Flow</p>
+          <h2>How it plays</h2>
+          <ol>
+            <li>Reachy draws one move from a shuffled repertoire.</li>
+            <li>The move repeats three times for the audience.</li>
+            <li>The camera watches for a thumbs up or thumbs down verdict.</li>
+            <li>Reachy reacts and quickly returns to the next round.</li>
+          </ol>
+        </article>
+        <article id="run">
+          <p class="kicker">Run</p>
+          <h2>Use Reachy Mini Control</h2>
+          <ol>
+            <li>Open Reachy Mini Control on the machine connected to Reachy.</li>
+            <li>Install the app from this Hugging Face Space.</li>
+            <li>Launch it from Control and use the built-in dashboard.</li>
+            <li>Use it in simulation or on the physical Reachy</li>
+          </ol>
+        </article>
+      </section>
+
+      <section class="arena-finale" aria-label="Reachy arena verdicts">
+        <figure class="finale-reachy">
+          <img
+            src="reachy_gladiator_lp/static/media/reachy_gladiator.png"
+            alt="Reachy in the gladiator arena with thumbs up and thumbs down"
+          />
+        </figure>
+      </section>
+    </main>
+  </body>
+</html>

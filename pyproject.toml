@@ -1,0 +1,28 @@
+[project]
+name = "reachy-gladiator-lp"
+version = "1.0.0"
+description = "Reachy Gladiator learning-path app for Raspberry Pi webcam inference and remote MuJoCo simulation"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "reachy-mini>=1.3.0",
+  "mediapipe==0.10.18; platform_system == 'Linux' and platform_machine == 'aarch64'",
+  "mediapipe==0.10.35; platform_system != 'Linux' or platform_machine != 'aarch64'",
+  "numpy>=1.24",
+]
+keywords = ["reachy-mini-app", "learning-path"]
+
+[project.entry-points."reachy_mini_apps"]
+reachy-gladiator-lp = "reachy_gladiator_lp.main:ReachyGladiatorLp"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["reachy_gladiator_lp*"]
+exclude = ["build*"]
+
+[tool.setuptools.package-data]
+reachy_gladiator_lp = ["**/*"]

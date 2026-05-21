@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# -gt 0 ]]; then
+  export REACHY_GLADIATOR_DAEMON_HOST="$1"
+fi
+
+if [[ -z "${REACHY_GLADIATOR_DAEMON_HOST:-}" ]]; then
+  echo "Usage: $0 <simulation-host-ip-or-hostname>"
+  echo "Or set REACHY_GLADIATOR_DAEMON_HOST first."
+  exit 2
+fi
+
+export REACHY_GLADIATOR_DAEMON_PORT="${REACHY_GLADIATOR_DAEMON_PORT:-8000}"
+export REACHY_GLADIATOR_DAEMON_TIMEOUT="${REACHY_GLADIATOR_DAEMON_TIMEOUT:-8.0}"
+export REACHY_GLADIATOR_DASHBOARD_HOST="${REACHY_GLADIATOR_DASHBOARD_HOST:-0.0.0.0}"
+export REACHY_GLADIATOR_DASHBOARD_PORT="${REACHY_GLADIATOR_DASHBOARD_PORT:-8042}"
+export REACHY_GLADIATOR_MEDIA_BACKEND="${REACHY_GLADIATOR_MEDIA_BACKEND:-no_media}"
+export REACHY_GLADIATOR_CAMERA="${REACHY_GLADIATOR_CAMERA:-opencv}"
+export REACHY_GLADIATOR_CAMERA_INDEX="${REACHY_GLADIATOR_CAMERA_INDEX:-0}"
+
+echo "Starting Reachy Gladiator LP"
+echo "  Simulation daemon: ${REACHY_GLADIATOR_DAEMON_HOST}:${REACHY_GLADIATOR_DAEMON_PORT}"
+echo "  Dashboard: http://<pi-ip>:${REACHY_GLADIATOR_DASHBOARD_PORT}"
+echo "  Media backend: ${REACHY_GLADIATOR_MEDIA_BACKEND}"
+echo "  USB camera index: ${REACHY_GLADIATOR_CAMERA_INDEX}"
+
+exec python -m reachy_gladiator_lp.main
